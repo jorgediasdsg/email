@@ -14,7 +14,7 @@
 <p>mutt - o script já instala</p>
 
 <h4>Instalação</h4>
-<p>Baixe o arquivo <a href="https://gitlab1.cbm.sc.gov.br/redes/email/blob/master/email.sh">email.sh</a></p>
+<p>Baixe o arquivo <a href="https://github.com/jorgediasdsg/email/blob/master/email.sh">email.sh</a></p>
 <p>De permissão de execução para ele com o comando abaixo</p>
 <code>sudo chmod +x email.sh</code>
 <p>Rode o script de instalação com o comando abaixo</p>

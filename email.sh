@@ -23,6 +23,19 @@ echo ""
 fi
 echo "----------------------------------------------------------------------------------"
 }
+echo "" > email.txt
+echo "Olá," >> email.txt
+echo "" >> email.txt
+echo "Se você está lendo essa mensagem é porque deu certo a coisa..." >> email.txt
+echo "" >> email.txt
+echo "agora que já tem configurado cliente de e-mail em seu computador você pode automatizar seus scripts." >> email.txt
+echo "" >> email.txt
+echo "Use o comando abaixo para isso..." >> email.txt
+echo "" >> email.txt
+echo "mutt -s 'ASSUNTO DO EMAIL' EMAIL@EMAIL.COM < CORPODOEMAIL.txt -a ANEXO.zip" >> email.txt
+echo "" >> email.txt
+echo "Até mais." >> email.txt
+echo "" >> email.txt
 echot "DIGITE SEU GMAIL"
 read EMAILGMAIL
 echot "DIGITE SEU NOME"
@@ -49,5 +62,6 @@ echo "set postponed='imaps://imap.gmail.com/[Gmail]/Drafts' " >> $HOME/.muttrc
 echo "set smtp_url='smtps://$EMAILGMAIL:$SENHAGMAIL@smtp.gmail.com:465/' " >> $HOME/.muttrc
 echo "set move='no' " >> $HOME/.muttrc
 echo "set imap_keepalive='900'" >> $HOME/.muttrc
-echo "Se você recebeu esse e-mail é porque está funcionando a parada. USE ESSE MODELO PARA ENVIAR VIA BASH echo 'Aqui coloque o corpo do e-mail' | mutt -s 'Aqui coloque o assunto do e-mail' DESTINO@EMAIL.COM -a LOCALDOANEXO LOCALDOOUTROANEXO" | mutt -s "Confirmação de email" $EMAILGMAIL
-echot "INSTALAÇÃO ENCERRADA - CONFIRA SEU E-MAIL" "SIGA O MODELO ABAIXO PARA ENVIO POR SCRIPT" "echo 'Aqui coloque o corpo do e-mail' | mutt -s 'Aqui coloque o assunto do e-mail' DESTINO@EMAIL.COM -a LOCALDOANEXO LOCALDOOUTROANEXO"
+mutt -s "Confirmação de email "$EMAILGMAIL $EMAILGMAIL < email.txt -a mail.sh
+rm -rf email.txt
+echot "INSTALAÇÃO ENCERRADA - CONFIRA SEU E-MAIL"

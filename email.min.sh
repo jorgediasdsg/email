@@ -16,7 +16,7 @@ read SENHAGMAIL; echot "CONFIRA AS INFORMAÇÕES E APERTE ENTER PARA CONTINUAR O
 #INSTALAÇÃO DOS APPS
 instala_apps(){ sudo apt-get install sendmail -y; sudo apt-get install mutt -y; }
 #CRIANDO BACKUP DO .muttrc CASO JÁ EXISTA
-setup_conf(){ [ ! -d "$HOME/.muttrc" ] || echot "JÁ EXISTE UMA INSTALAÇÃO" "RENOMEANDO .OLD AGUARDE..."; mv $HOME/.muttrc $HOME/.muttrc-old
+setup_conf(){ [ ! -d "$HOME/.muttrc" ] || mv $HOME/.muttrc $HOME/.muttrc-old; echot "JÁ EXISTE UMA INSTALAÇÃO" "RENOMEANDO .OLD AGUARDE..."; 
 e "set ssl_starttls='yes' " >> $HOME/.muttrc; e "set ssl_force_tls='yes' " >> $HOME/.muttrc
 e "set imap_user='$EMAILGMAIL' " >> $HOME/.muttrc; e "set imap_pass='*$SENHAGMAIL' " >> $HOME/.muttrc
 e "set from='$EMAILGMAIL' " >> $HOME/.muttrc; e "set realname='$NOME' " >> $HOME/.muttrc
